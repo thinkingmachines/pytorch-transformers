@@ -185,6 +185,8 @@ class ColaProcessor(DataProcessor):
         """Creates examples for the training and dev sets."""
         examples = []
         for (i, line) in enumerate(lines):
+            if len(line) != 4:
+                continue
             guid = "%s-%s" % (set_type, i)
             text_a = line[3]
             label = line[1]
